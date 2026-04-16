@@ -48,14 +48,44 @@ app.get('/api/metadata', (req, res) => {  /* esta ruta va a responder a la petic
         }); 
     }
 );
+ 
+app.post('/api/cards', (req, res) => {
+    const jugador = req.body;
+
+    // VALIDACIÓN BÁSICA
+    if (!jugador.nombre || !jugador.pais) {
+        return res.status(400).json({
+            error: "Faltan datos obligatorios"
+        });
+    }
+
+    // VALIDAR HABILIDADES
+    if (!Array.isArray(jugador.habilidades)) {
+        return res.status(400).json({
+            error: "Habilidades debe ser un array"
+        });
+    }
+
+    // VALIDAR RANGO (1-99)
+    const validas = jugador.habilidades.every(h => h >= 1 && h <= 99);
+
+    if (!validas) {
+        return res.status(400).json({
+            error: "Las habilidades deben estar entre 1 y 99"
+        });
+    }
+
+    jugadores.push(jugador);
+
+    res.json({
+        message: "Carta creada correctamente",
+        data: jugador
+    });
+});
 
 app.listen(3000, () => { /* el servidor escucha en el puerto 3000 */
     console.log('Servidor en puerto 3000'); 
 }
-);  
-
-
-
-
+); 
 
 
