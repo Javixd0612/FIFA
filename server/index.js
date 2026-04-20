@@ -12,7 +12,7 @@ app.use(express.json());
 // --- RUTAS ---
 
 app.get("/", (req, res) => {
-  res.send("Proyecto Fifa funcionando");
+  res.send("Proyecto Fifa Funcionando");
 });
 
 // Obtener todos los jugadores
@@ -29,10 +29,15 @@ app.post("/api/jugadores", (req, res) => {
     !jugador.pais ||
     !jugador.posicion ||
     !jugador.club ||
-    !jugador.league ||
-    !jugador.foot ||
-    !jugador.rating ||
-    !jugador.habilidades
+    !jugador.liga ||
+    !jugador.pie ||
+    !jugador.grl ||
+    !jugador.habilidades ||
+    !jugador.habilidades.ritmo ||
+    !jugador.habilidades.tiro ||
+    !jugador.habilidades.pase ||
+    !jugador.habilidades.regate ||
+    !jugador.habilidades.defensa
   ) {
     return res.status(400).json({
       message: "Faltan campos obligatorios",
@@ -50,13 +55,19 @@ app.post("/api/jugadores", (req, res) => {
 
 app.get("/api/metadata", (req, res) => {
   res.json({
-    Pais: ["Colombia", "Argentina", "Brasil", "Francia", "España"],
-    Posicion: ["Portero", "Defensa", "Mediocampista", "Delantero"],
-    Club: ["Real Madrid", "Barcelona", "Manchester United", "Bayern Munich", "Juventus"],
-    League: ["La Liga", "Premier League", "Serie A", "Bundesliga", "Ligue 1"],
-    Foot: ["Derecho", "Izquierdo"],
-    Rating: "1-99",
-    Habilidades: ["Velocidad", "Tiro", "Pase", "Regate", "Defensa"],
+    
+    
+    Pais: ["Argentina", "Brasil", "España", "Francia", "Alemania", "Inglaterra", "Italia", "Portugal", "Países Bajos", "Colombia", "México", "Estados Unidos", "Rusia", "Japón", "Venezuela"],
+    Club: ["Real Madrid", "Barcelona", "Manchester United", "Bayern Munich", "Juventus", "Paris Saint-Germain", "Liverpool", "Chelsea", "Atlético Madrid", "Inter de Milán", "Atletico Parceros", "Seleccion", "Inter-Miami"],
+    Liga: ["La Liga", "Premier League", "Serie A", "Bundesliga", "Ligue 1", "MLS", "Brasileirão", "Liga Argentina", "Copa-America", "UEFA-EURO"],
+    Pie: ["Derecho", "Izquierdo", "Ambidiestro", "Ninguno"],
+    Habilidades: {
+      ritmo: [1, 99],
+      tiro: [1, 99],
+      pase: [1, 99],
+      regate: [1, 99],
+      defensa: [1, 99],
+    },
   });
 });
 
@@ -64,21 +75,23 @@ app.get("/api/metadata", (req, res) => {
 app.post("/api/cards", (req, res) => {
   const nuevaCarta = req.body;
 
-  // Validación básica
-  if (!nuevaCarta.nombre || !nuevaCarta.pais) {
+  if (
+    !nuevaCarta.nombre ||
+    !nuevaCarta.pais ||
+    !nuevaCarta.club ||
+    !nuevaCarta.posicion ||
+    !nuevaCarta.habilidades ||
+    !nuevaCarta.grl ||
+    !nuevaCarta.liga ||
+    !nuevaCarta.pie 
+  ) {
     return res.status(400).json({
-      error: "Faltan datos obligatorios",
-    });
-  }
-
-  // Validar habilidades
-  if (!Array.isArray(nuevaCarta.habilidades)) {
-    return res.status(400).json({
-      error: "Habilidades debe ser un array",
+      error: "Faltan campos obligatorios",
     });
   }
 
   cards.push(nuevaCarta);
+
   res.json({
     message: "Carta creada correctamente",
     data: nuevaCarta,
@@ -93,3 +106,4 @@ app.get("/api/cards", (req, res) => {
 app.listen(3000, () => {
   console.log("Servidor corriendo en http://localhost:3000");
 });
+
