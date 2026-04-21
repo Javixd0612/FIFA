@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
 }
 
-/* IZQUIERDA */
+/* IZQUIERDA - PANEL DE CONTROL */
 .left-panel {
   width: 50%;
   background: #f5f5f5;
@@ -31,10 +31,27 @@ body {
 .formulario select {
   padding: 10px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid #ddd;
+  transition: all 0.3s;
 }
 
-/* DERECHA */
+/* MENSAJES Y ESTADOS DE ERROR */
+.formulario input.error,
+.formulario select.error {
+  border: 2px solid #d9534f;
+  background-color: #fff5f5;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 12px;
+  margin-top: -5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  display: block;
+}
+
+/* DERECHA - VISTA PREVIA */
 .right-panel {
   width: 50%;
   display: flex;
@@ -42,65 +59,136 @@ body {
   align-items: center;
 }
 
-.card{
-width:330px;
-height:550px;
-border-radius:25px;
-padding:20px;
-color:white;
-position:relative;
-background-color: black;
-box-shadow:0 0 20px black;
+/* CARD COMPACTA */
+.card {
+  width: 340px; 
+  height: 540px; 
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  color: #000;
+  box-shadow: 0 0 25px rgba(0,0,0,.4);
+  overflow: hidden;
 }
 
-.top-left{
-position:absolute;
-top:20px;
-left:20px;
-text-align:center;
+/* TIPOS DE CARTA */
+.card.oro { background: linear-gradient(135deg,#9e7900,#ffd700,#b88a00); }
+.card.plata { background: linear-gradient(135deg,#7d7d7d,#e8e8e8,#9f9f9f); }
+.card.bronce { background: linear-gradient(135deg,#693100,#cd7f32,#8a4700); }
+.card.azul { background: linear-gradient(135deg,#001d52,#0d6efd,#63b0ff); color: #fff; }
+
+/* RATING Y POSICION */
+.top-left {
+  position: absolute;
+  top: 25px; 
+  left: 25px;
+  z-index: 10;
+  text-align: center;
+  width: 80px;
 }
 
-.top-left h1{
-font-size:55px;
+.top-left h1 {
+  font-size: 72px; 
+  line-height: 0.85;
+  font-weight: 900;
 }
 
-.top-left h3{
-font-size:28px;
-margin-top:-10px;
+/* MODIFICADO: Posición bajada un pelín para no pegarse al GRL */
+.top-left h3 {
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: 8px; /* Espacio extra entre el número y la posición */
 }
 
-.top-left p{
-font-size:14px;
+/* LOGOS */
+.logos-card {
+  position: absolute;
+  top: 140px; 
+  left: 42px; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  z-index: 10;
+  align-items: center;
 }
 
-.player-image{
-height:220px;
-margin-top:80px;
+.bandera { width: 44px; height: auto; border-radius: 3px; }
+.escudo { width: 52px; height: 52px; object-fit: contain; }
+.liga-logo { width: 42px; height: 42px; object-fit: contain; }
+
+/* FOTO JUGADOR */
+.player-image {
+  position: absolute;
+  top: 40px; 
+  right: 25px;
+  width: 190px; 
+  height: 250px;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 12px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card h2{
-text-align:center;
-font-size:30px;
-margin-top:20px;
+.player-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.stats{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-top:40px;
-font-size:24px;
-font-weight:bold;
+/* SECCIÓN INFERIOR */
+.card h2 {
+  position: absolute;
+  bottom: 165px; 
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-size: 36px; 
+  font-weight: 900;
+  text-transform: uppercase;
+  z-index: 10;
 }
 
-.foot-section{
-text-align:center;
-margin-top:18px;
-font-size:18px;
-font-weight:bold;
-letter-spacing:1px;
-width:100%;
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
+.stats {
+  position: absolute;
+  bottom: 70px; 
+  left: 35px;
+  right: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-group p {
+  font-size: 22px; 
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.foot-section {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+/* BOTONES */
+.formulario button,
+.btn-descargar {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #0d6efd;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn-descargar {
+  margin-top: 20px;
+  width: 100%;
 }
