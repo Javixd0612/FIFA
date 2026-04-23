@@ -70,14 +70,14 @@ const escudos = {
   "Paris Saint-Germain":"https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg",
   "Arsenal":"https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
   "Inter de Milan":"https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg",
-  "Real Madrid": "/client/public/logos/realmadrid.png",
-  "Chelsea": "/client/public/logos/chelsea.png",
-  "Juventus": "/client/public/logos/juventus.png",
-  "Atlético Madrid": "/client/public/logos/atletico.png",
-  "Manchester-City": "/client/public/logos/mancity.png",
-  "Bayern Munich": "/client/public/logos/bayern.png",
-  "AC de Milan": "/client/public/logos/acmilan.png",
-  "Borussia Dortmund": "/client/public/logos/dortmund.png"
+  "Real Madrid": "/logos/realmadrid.png",
+  "Chelsea": "/logos/chelsea.png",
+  "Juventus": "/logos/juventus.png",
+  "Atlético Madrid": "/logos/atletico.png",
+  "Manchester-City": "/logos/mancity.png",
+  "Bayern Munich": "/logos/bayern.png",
+  "AC de Milan": "/logos/acmilan.png",
+  "Borussia Dortmund": "/logos/dortmund.png"
 };
 
 
@@ -85,9 +85,9 @@ const escudos = {
   const logosLigas = {
   "Premier League":"https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg",
   "Serie A":"https://1000logos.net/wp-content/uploads/2021/10/Serie-A-logo.png",
-  "La Liga": "/client/public/logos/laliga.png",
-  "Ligue 1": "/client/public/logos/ligue1.png",
-  "MLS": "/client/public/logos/mls.png",
+  "La Liga": "/logos/laliga.png",
+  "Ligue 1": "/logos/ligue1.png",
+  "MLS": "/logos/mls.png",
 };
 
   const promedio =
