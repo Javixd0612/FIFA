@@ -67,7 +67,7 @@ app.post("/api/cards", (req, res) => {
   const nuevaCarta = req.body;
 
   if (
-    !nuevaCarta.nombre ||
+    !nuevaCarta.nombre.trim() ||
     !nuevaCarta.pais ||
     !nuevaCarta.club ||
     !nuevaCarta.posicion ||
