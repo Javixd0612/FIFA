@@ -2,7 +2,7 @@ import html2canvas from "html2canvas";
 import { useRef } from "react";
 
 function CardPreview({ jugador }) {
-  const cartaRef = useRef();
+  const cartaRef = useRef();  
 
   const stats = jugador.habilidades || {
     ritmo: 0,
@@ -30,7 +30,7 @@ function CardPreview({ jugador }) {
   const descargarCarta = async () => {
     if (!cartaRef.current) return;
 
-    const canvas = await html2canvas(cartaRef.current, {
+    const canvas = await html2canvas(cartaRef.current, { 
       useCORS: true,
       backgroundColor: null,
       scale: 2
@@ -42,52 +42,63 @@ function CardPreview({ jugador }) {
     link.click();
   };
 
-  /* BANDERAS */
+  /* BANDERAS ACTUALIZADAS */
   const banderas = {
-    Venezuela: "https://flagcdn.com/w80/ve.png",
-    Colombia: "https://flagcdn.com/w80/co.png",
-    Argentina: "https://flagcdn.com/w80/ar.png",
-    Brasil: "https://flagcdn.com/w80/br.png",
-    Portugal: "https://flagcdn.com/w80/pt.png",
-    España: "https://flagcdn.com/w80/es.png",
-    Francia: "https://flagcdn.com/w80/fr.png",
-    Alemania: "https://flagcdn.com/w80/de.png",
-    Italia: "https://flagcdn.com/w80/it.png"
+  Inglaterra: "https://flagcdn.com/w80/gb-eng.png",
+  Argentina: "https://flagcdn.com/w80/ar.png",
+  Brasil: "https://flagcdn.com/w80/br.png",
+  España: "https://flagcdn.com/w80/es.png",
+  Francia: "https://flagcdn.com/w80/fr.png",
+  Alemania: "https://flagcdn.com/w80/de.png",
+  Italia: "https://flagcdn.com/w80/it.png",
+  Portugal: "https://flagcdn.com/w80/pt.png",
+  Colombia: "https://flagcdn.com/w80/co.png",
+  Venezuela: "https://flagcdn.com/w80/ve.png",
+  "Países Bajos": "https://flagcdn.com/w80/nl.png",
+  Uruguay: "https://flagcdn.com/w80/uy.png",
+  Bélgica: "https://flagcdn.com/w80/be.png",
+  México: "https://flagcdn.com/w80/mx.png",
+  "Estados Unidos": "https://flagcdn.com/w80/us.png",
+};
+
+/* ESCUDOS CLUBES - Nombres unificados con la API y clubLiga */
+const escudos = {
+    "Barcelona": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
+    "Real Madrid": "https://i.ibb.co/fzrCPdbR/Real-Madrid-CF-svg.png",
+    "Liverpool": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
+    "Chelsea": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
+    "Juventus": "https://i.ibb.co/HL2DKqN7/Juventus.png",
+    "Inter-Miami": "https://upload.wikimedia.org/wikipedia/en/5/5c/Inter_Miami_CF_logo.svg", // Sin guion
+    "Atlético Madrid": "https://i.ibb.co/B5M7TrbG/i.png",
+    "Manchester United": "https://i.ibb.co/FPR1RsP/J.png",
+    "Bayern Munich": "https://i.ibb.co/zWr3XCrx/bayer.png",
+    "Paris Saint-Germain": "https://i.ibb.co/278DCLm5/paris.png",
+    "Manchester-City": "https://i.ibb.co/ZR6kyKhq/Manchester-City-FC-badge-svg.png", // Sin guion
+    "Arsenal": "https://i.ibb.co/4wL8q6R4/arsenal.png",
+    "Inter de Milan": "https://i.ibb.co/vCdHxXH8/inter-de-milan-1.png", // Con tilde y nombre completo
+    "AC de Milan": "https://i.ibb.co/39THWxJX/milan.png", // Nombre limpio
+    "Borussia Dortmund": "https://i.ibb.co/fPHvyvP/boru-1.png",
   };
 
-  /* ESCUDOS CLUBES - Corregido el link del Real Madrid */
-const escudos = {
-  "Barcelona": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
-  "Real Madrid": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg", 
-  "Liverpool": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
-  "Chelsea": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
-  "Juventus": "https://upload.wikimedia.org/wikipedia/commons/1/15/Juventus_FC_2017_logo.svg",
-  "Inter-Miami": "https://upload.wikimedia.org/wikipedia/en/5/5c/Inter_Miami_CF_logo.svg",
-  "Atlético Madrid": "https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg",
-  "Manchester United": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
-  "Bayern Munich": "https://upload.wikimedia.org/wikipedia/commons/1/1f/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg",
-  "Paris Saint-Germain": "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg"
-};
 
   /* LIGAS */
   const logosLigas = {
     "La Liga":
-      "https://upload.wikimedia.org/wikipedia/commons/0/03/LaLiga_logo.svg",
-
+      "https://i.ibb.co/RGwf8jzy/laliga-Photoroom.png",
     "Premier League":
-      "https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg",
+      "https://i.ibb.co/gLVQVnF8/LEON-Photoroom.png",
 
     "Serie A":
-      "https://upload.wikimedia.org/wikipedia/en/e/e1/Serie_A_logo_%282019%29.svg",
-
+      "https://i.ibb.co/WYqZM2n/serie-Photoroom.png",
     "Bundesliga":
       "https://upload.wikimedia.org/wikipedia/en/d/df/Bundesliga_logo_%282017%29.svg",
 
     "Ligue 1":
-      "https://upload.wikimedia.org/wikipedia/en/c/c7/Ligue1.svg",
+      "https://i.ibb.co/W4hQzYSS/Ligue1-logo.png",
 
     "MLS":
-      "https://upload.wikimedia.org/wikipedia/en/7/76/Major_League_Soccer_logo.svg"
+      "https://i.ibb.co/pjpmhZmW/mls-logo3-Photoroom.png"
+    
   };
 
   const promedio =

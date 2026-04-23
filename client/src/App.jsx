@@ -4,8 +4,7 @@ import Formulario from "./components/Formulario";
 import CardPreview from "./components/CardPreview";
 
 function App() {
-  const [jugador, setJugador] = useState({ 
-    /* con el UseState inicializamos el estado del jugador, la funcion va a retornar un array, en el que contiene el valor inicial que se podra actualizar y el otro sera la funcion que vamos a llamar para actualizarlo */
+  const [jugador, setJugador] = useState({
     nombre: "",
     pais: "",
     posicion: "",
@@ -13,16 +12,14 @@ function App() {
     liga: "",
     pie: "",
     grl: "",
-    img:"",
-    
+    imagen: "",
     habilidades: {
       ritmo: "",
       tiro: "",
       pase: "",
       regate: "",
       defensa: "",
-      fisico: ""
-      
+      fisico: ""  
     }
   });
 
@@ -37,9 +34,9 @@ function App() {
       </section>
 
       <section className="right-panel">
-        <CardPreview 
-        jugador={jugador} 
-        setJugador={setJugador}/>
+        <CardPreview
+          jugador={jugador}
+        />
       </section>
 
     </div>

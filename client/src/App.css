@@ -180,7 +180,7 @@ body {
 .btn-descargar {
   padding: 12px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #0d6efd;
   color: white;
   font-weight: bold;
@@ -188,7 +188,125 @@ body {
   transition: .3s;
 }
 
+.formulario button:hover,
+.btn-descargar:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+}
+
+.formulario button:disabled,
+.btn-descargar:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+.exito,
+.error {
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.exito {
+  background: #d4edda;
+  color: #155724;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
 .btn-descargar {
   margin-top: 20px;
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .left-panel {
+    order: 1;
+  }
+
+  .right-panel {
+    order: 2;
+    margin-top: 10px;
+  }
+
+  .card {
+    width: 280px;
+    height: 450px;
+    margin: auto;
+  }
+
+  .top-left {
+    top: 20px;
+    left: 18px;
+  }
+
+  .top-left h1 {
+    font-size: 52px;
+  }
+
+  .top-left h3 {
+    font-size: 22px;
+  }
+
+  .player-image {
+    width: 155px;
+    height: 210px;
+    top: 35px;
+    right: 18px;
+  }
+
+  .logos-card {
+    top: 120px;
+    left: 30px;
+    gap: 8px;
+  }
+
+  .bandera {
+    width: 34px;
+  }
+
+  .escudo,
+  .liga-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .card h2 {
+    font-size: 26px;
+    bottom: 140px;
+  }
+
+  .stats {
+    bottom: 65px;
+    left: 28px;
+    right: 28px;
+  }
+
+  .stat-group p {
+    font-size: 17px;
+  }
+
+  .foot-section {
+    bottom: 22px;
+    font-size: 16px;
+  }
+
+  .btn-descargar {
+    width: 280px;
+    margin: 15px auto 0;
+    display: block;
+  }
 }
