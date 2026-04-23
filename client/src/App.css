@@ -210,11 +210,15 @@ body {
 .exito {
   background: #d4edda;
   color: #155724;
+  font-weight:bold;
+  margin-top:8px;
 }
 
 .error {
   background: #f8d7da;
   color: #721c24;
+  font-weight:bold;
+  margin-top:8px;
 }
 
 .btn-descargar {

@@ -43,63 +43,52 @@ function CardPreview({ jugador }) {
   };
 
   /* BANDERAS ACTUALIZADAS */
-  const banderas = {
-  Inglaterra: "https://flagcdn.com/w80/gb-eng.png",
-  Argentina: "https://flagcdn.com/w80/ar.png",
-  Brasil: "https://flagcdn.com/w80/br.png",
-  España: "https://flagcdn.com/w80/es.png",
-  Francia: "https://flagcdn.com/w80/fr.png",
-  Alemania: "https://flagcdn.com/w80/de.png",
-  Italia: "https://flagcdn.com/w80/it.png",
-  Portugal: "https://flagcdn.com/w80/pt.png",
-  Colombia: "https://flagcdn.com/w80/co.png",
-  Venezuela: "https://flagcdn.com/w80/ve.png",
-  "Países Bajos": "https://flagcdn.com/w80/nl.png",
-  Uruguay: "https://flagcdn.com/w80/uy.png",
-  Bélgica: "https://flagcdn.com/w80/be.png",
-  México: "https://flagcdn.com/w80/mx.png",
-  "Estados Unidos": "https://flagcdn.com/w80/us.png",
+const banderas = {
+ Inglaterra:"https://flagcdn.com/gb.svg",
+ Argentina:"https://flagcdn.com/ar.svg",
+ Brasil:"https://flagcdn.com/br.svg",
+ España:"https://flagcdn.com/es.svg",
+ Francia:"https://flagcdn.com/fr.svg",
+ Alemania:"https://flagcdn.com/de.svg",
+ Italia:"https://flagcdn.com/it.svg",
+ Portugal:"https://flagcdn.com/pt.svg",
+ Colombia:"https://flagcdn.com/co.svg",
+ Venezuela:"https://flagcdn.com/ve.svg",
+ "Países Bajos":"https://flagcdn.com/nl.svg",
+ Uruguay:"https://flagcdn.com/uy.svg",
+ Bélgica:"https://flagcdn.com/be.svg",
+ México:"https://flagcdn.com/mx.svg",
+ "Estados Unidos":"https://flagcdn.com/us.svg"
 };
 
 /* ESCUDOS CLUBES - Nombres unificados con la API y clubLiga */
 const escudos = {
-    "Barcelona": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
-    "Real Madrid": "https://i.ibb.co/fzrCPdbR/Real-Madrid-CF-svg.png",
-    "Liverpool": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
-    "Chelsea": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
-    "Juventus": "https://i.ibb.co/HL2DKqN7/Juventus.png",
-    "Inter-Miami": "https://upload.wikimedia.org/wikipedia/en/5/5c/Inter_Miami_CF_logo.svg", // Sin guion
-    "Atlético Madrid": "https://i.ibb.co/B5M7TrbG/i.png",
-    "Manchester United": "https://i.ibb.co/FPR1RsP/J.png",
-    "Bayern Munich": "https://i.ibb.co/zWr3XCrx/bayer.png",
-    "Paris Saint-Germain": "https://i.ibb.co/278DCLm5/paris.png",
-    "Manchester-City": "https://i.ibb.co/ZR6kyKhq/Manchester-City-FC-badge-svg.png", // Sin guion
-    "Arsenal": "https://i.ibb.co/4wL8q6R4/arsenal.png",
-    "Inter de Milan": "https://i.ibb.co/vCdHxXH8/inter-de-milan-1.png", // Con tilde y nombre completo
-    "AC de Milan": "https://i.ibb.co/39THWxJX/milan.png", // Nombre limpio
-    "Borussia Dortmund": "https://i.ibb.co/fPHvyvP/boru-1.png",
-  };
+  "Barcelona":"https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
+  "Liverpool":"https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
+  "Inter-Miami":"https://upload.wikimedia.org/wikipedia/en/5/5c/Inter_Miami_CF_logo.svg",
+  "Manchester United":"https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
+  "Paris Saint-Germain":"https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg",
+  "Arsenal":"https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
+  "Inter de Milan":"https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg",
+  "Real Madrid": "/logos/realmadrid.png",
+  "Chelsea": "/logos/chelsea.png",
+  "Juventus": "/logos/juventus.png",
+  "Atlético Madrid": "/logos/atletico.png",
+  "Manchester-City": "/logos/mancity.png",
+  "Bayern Munich": "/logos/bayern.png",
+  "AC de Milan": "/logos/acmilan.png",
+  "Borussia Dortmund": "/logos/dortmund.png"
+};
 
 
   /* LIGAS */
   const logosLigas = {
-    "La Liga":
-      "https://i.ibb.co/RGwf8jzy/laliga-Photoroom.png",
-    "Premier League":
-      "https://i.ibb.co/gLVQVnF8/LEON-Photoroom.png",
-
-    "Serie A":
-      "https://i.ibb.co/WYqZM2n/serie-Photoroom.png",
-    "Bundesliga":
-      "https://upload.wikimedia.org/wikipedia/en/d/df/Bundesliga_logo_%282017%29.svg",
-
-    "Ligue 1":
-      "https://i.ibb.co/W4hQzYSS/Ligue1-logo.png",
-
-    "MLS":
-      "https://i.ibb.co/pjpmhZmW/mls-logo3-Photoroom.png"
-    
-  };
+  "Premier League":"https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg",
+  "Serie A":"https://1000logos.net/wp-content/uploads/2021/10/Serie-A-logo.png",
+  "La Liga": "/logos/laliga.png",
+  "Ligue 1": "/logos/ligue1.png",
+  "MLS": "/logos/mls.png",
+};
 
   const promedio =
     (

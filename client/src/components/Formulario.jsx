@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
+const API = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 function Formulario({ jugador, setJugador }) {
-  
+
   const API = import.meta.env.VITE_API_URL;
   const [paises, setPaises] = useState([]);
   const [clubes, setClubes] = useState([]);
@@ -280,7 +282,7 @@ function Formulario({ jugador, setJugador }) {
       <input type="number" placeholder="Defensa" disabled={!datosCompletos} onChange={(e) => cambiarHabilidad("defensa", e.target.value)} />
       <input type="number" placeholder="Físico" disabled={!datosCompletos} onChange={(e) => cambiarHabilidad("fisico", e.target.value)} />
 
-      <button type="submit">
+      <button type="submit" disabled={guardando}>
         {guardando ? "Guardando..." : "Guardar Carta"}
       </button>
 
