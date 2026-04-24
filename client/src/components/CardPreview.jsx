@@ -85,10 +85,10 @@ const escudos = {
   const logosLigas = {
   "Premier League":"https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg",
   "Serie A":"https://1000logos.net/wp-content/uploads/2021/10/Serie-A-logo.png",
+  "Bundesliga":"/logos/bundesliga.png",
   "La Liga": "/logos/laliga.png",
   "Ligue 1": "/logos/ligue1.png",
-  "MLS": "/logos/mls.png",
-  "Bundesliga":"/logos/Bundesliga.png"
+  "MLS": "/logos/mls.png"
 };
 
   const promedio =
