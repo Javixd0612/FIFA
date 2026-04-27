@@ -1,6 +1,6 @@
 # FIFA Project ⚽
 
-Aplicación web para crear cartas estilo FIFA personalizadas.
+Aplicación web Full Stack para crear cartas personalizadas estilo FIFA.
 
 ## Tecnologías usadas
 
@@ -32,30 +32,88 @@ Aplicación web para crear cartas estilo FIFA personalizadas.
 
 ### 1. Clonar repositorio
 
-git clone URL_DEL_REPO
+git clone https://github.com/Javixd0612/FIFA.git
 
-### 2. Instalar frontend
+### Proyecto Local
 
-cd client
-npm install
+### 2. Frontend
+
+cd client  
+npm install  
 npm run dev
 
-### 3. Instalar backend
+### 3. Backend
 
-cd ../server
-npm install
+cd ../server  
+npm install  
 node index.js
 
 ---
 
 ## Variables de entorno
 
-Crear archivo `.env` en client:
+Crear archivo `.env` dentro de `client`:
 
 VITE_API_URL=http://localhost:3000
 
 ---
 
+## Despliegue
+
+### Backend en Render
+
+- Iniciar sesión con GitHub
+- Crear **Web Service**
+- Seleccionar repositorio `FIFA`
+- Root Directory: `server`
+- Build Command: `npm install`
+- Start Command: `node index.js`
+
+URL:
+
+https://fifa-api-n3ea.onrender.com
+
+### Frontend en Vercel
+
+- Iniciar sesión con GitHub
+- Importar repositorio `FIFA`
+- Framework: `Vite`
+- Root Directory: `client`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+
+Variable de entorno:
+
+VITE_API_URL=https://fifa-api-n3ea.onrender.com
+
+URL:
+
+https://fifa-olive.vercel.app/
+
+---
+
+## Verificación
+
+### Backend funcionando:
+
+Entrar a:
+
+https://fifa-api-n3ea.onrender.com
+
+Debe mostrar:
+
+Proyecto Fifa Funcionando
+
+### Frontend funcionando:
+
+Entrar a:
+
+https://fifa-olive.vercel.app/
+
+Debe mostrar formulario y generador de carta FIFA.
+
+---
+
 ## Autor
 
-Javi
+Javier Enrique Rincon Maldonado
